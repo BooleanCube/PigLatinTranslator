@@ -9,5 +9,6 @@ This Pig Latin Translator translates text from English to Pig Latin. This is a p
 - [ ] Vowel-End T Combination Check
 - [ ] 3 Letter Consonant Check
 - [ ] Exceptions (etc.)
+- [ ] Capitalization
 - [ ] File Management
 
