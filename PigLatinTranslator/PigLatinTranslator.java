@@ -24,9 +24,9 @@ public class PigLatinTranslator {
    }
 
    private static String translateWord (String word) {
-      if(TranslationException.beginsWithVowel(word)) return word + "yay";
+      if(TranslationException.beginsWithVowel(word)) return word + "yay"; //buggy if statement
       else {
-         if(TranslationException.beginsWithConsonant(word)) return word.substring(2) + word.substring(0,2) + "ay";
+         if(TranslationException.beginsWithConsonant(word)) return word.substring(2) + word.substring(0,2) + "ay"; //buggy if statement
          else return word.substring(1) + word.charAt(0) + "ay";
       }
    }
