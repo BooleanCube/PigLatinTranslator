@@ -1,6 +1,5 @@
-package PigLatinTranslator;
-
 public class TranslationException {
+
   public static boolean beginsWithVowel (String word) {
      String firstLetter = word.substring(0, 1);
      return firstLetter.equalsIgnoreCase("a") ||

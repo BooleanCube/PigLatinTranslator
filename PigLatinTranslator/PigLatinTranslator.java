@@ -1,7 +1,5 @@
-package PigLatinTranslator;
 import java.io.*;
 import java.util.*;
-import PigLatinTranslator.TranslationException;
 
 
 //fix bugs with static calling.
@@ -24,9 +22,9 @@ public class PigLatinTranslator {
    }
 
    private static String translateWord (String word) {
-      if(TranslationException.beginsWithVowel(word)) return word + "yay"; //buggy if statement
+      if(TranslationException.beginsWithVowel(word)) return word + "yay";
       else {
-         if(TranslationException.beginsWithConsonant(word)) return word.substring(2) + word.substring(0,2) + "ay"; //buggy if statement
+         if(TranslationException.beginsWithConsonant(word)) return word.substring(2) + word.substring(0,2) + "ay";
          else return word.substring(1) + word.charAt(0) + "ay";
       }
    }
