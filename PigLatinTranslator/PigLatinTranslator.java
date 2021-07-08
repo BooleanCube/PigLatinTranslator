@@ -1,8 +1,6 @@
 import java.io.*;
 import java.util.*;
 
-
-//fix bugs with static calling.
 public class PigLatinTranslator {
 
    public static void main(String[] args) throws IOException {
