@@ -1,10 +1,10 @@
 public class TranslationException {
 
-   public static boolean beginsWithVowel (String word) {
+   public static boolean beginsWithVowel(String word) {
      return isVowel(word.charAt(0));
    }
 
-   public static int beginsWithConsonant (String word) {
+   public static int beginsWithConsonant(String word) {
         int counter = 0;
         while(counter < word.length()) {
             if(!isVowel(word.charAt(counter))) ++counter;

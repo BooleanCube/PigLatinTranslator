@@ -11,7 +11,7 @@ public class PigLatinTranslator {
       System.out.println(translateText(untranslatedText));
    }
 
-   public static String translateText (String sentence) {
+   public static String translateText(String sentence) {
       String result = "";
       sentence = sentence.toLowerCase();
       StringTokenizer st = new StringTokenizer(sentence);
@@ -21,7 +21,7 @@ public class PigLatinTranslator {
       return result.trim();
    }
 
-   private static String translateWord (String word) {
+   private static String translateWord(String word) {
       if(TranslationException.beginsWithVowel(word)) return word + "yay";
       else {
          int consonantBegin = TranslationException.beginsWithConsonant(word);
