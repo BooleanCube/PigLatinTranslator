@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.*;
 
+
+//fix bugs with static calling.
 public class PigLatinTranslator {
 
    public static void main(String[] args) throws IOException {
@@ -22,7 +24,8 @@ public class PigLatinTranslator {
    private static String translateWord (String word) {
       if(TranslationException.beginsWithVowel(word)) return word + "yay";
       else {
-         if(TranslationException.beginsWithConsonant(word)) return word.substring(2) + word.substring(0,2) + "ay";
+         int consonantBegin = TranslationException.beginsWithConsonant(word);
+         if(consonantBegin > 1) return word.substring(consonantBegin) + word.substring(0,consonantBegin) + "ay";
          else return word.substring(1) + word.charAt(0) + "ay";
       }
    }
