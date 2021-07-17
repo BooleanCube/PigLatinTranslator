@@ -18,4 +18,8 @@ public class TranslationException {
        return vowels.indexOf(c) > -1;
    }
 
+   public static boolean checkPunctuation(String word) {
+       return !Character.isLetterOrDigit(word.charAt(word.length()-1));
+   }
+
 }
