@@ -6,7 +6,7 @@ This Pig Latin Translator translates text from English to Pig Latin. This is a p
 ### TODO:
 - [X] Vowel Check
 - [X] 2 Letter Consonant Check
-- [ ] Punctuation Check
+- [X] Punctuation Check
 - [ ] H-Vowel Combination Check
 - [ ] Vowel-End T Combination Check
 - [X] Multi-Letter Consonant Check
