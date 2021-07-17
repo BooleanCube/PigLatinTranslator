@@ -27,10 +27,7 @@ public class TranslationException {
    }
 
    public static boolean containsUpperCase(String word) {
-       for(char c : word.toCharArray()) {
-           if(Character.isUpperCase(c)) return true;
-       }
-       return false;
+       return Character.isUpperCase(word.charAt(0));
    }
 
 }
