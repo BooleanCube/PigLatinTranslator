@@ -22,4 +22,15 @@ public class TranslationException {
        return !Character.isLetterOrDigit(word.charAt(word.length()-1));
    }
 
+   public static boolean checkHVowel(String word) {
+       return Character.toLowerCase(word.charAt(0)) == 'h' && isVowel(word.charAt(1));
+   }
+
+   public static boolean containsUpperCase(String word) {
+       for(char c : word.toCharArray()) {
+           if(Character.isUpperCase(c)) return true;
+       }
+       return false;
+   }
+
 }

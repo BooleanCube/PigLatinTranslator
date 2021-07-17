@@ -1,8 +1,6 @@
 import java.io.*;
 import java.util.*;
 
-
-//fix bugs with static calling.
 public class PigLatinTranslator {
 
    public static void main(String[] args) throws IOException {
@@ -13,10 +11,14 @@ public class PigLatinTranslator {
 
    public static String translateText(String sentence) {
       String result = "";
-      sentence = sentence.toLowerCase();
       StringTokenizer st = new StringTokenizer(sentence);
       while(st.hasMoreTokens()) {
-         result += translateWord(st.nextToken()) + " ";
+         String word = st.nextToken();
+         boolean containsUpperCase = TranslationException.containsUpperCase(word);
+         word = word.toLowerCase();
+         word = translateWord(word);
+         if(containsUpperCase) result += Character.toUpperCase(word.charAt(0)) + word.substring(1) + " ";
+         else result += word + " ";
       }
       return result.trim();
    }
@@ -28,7 +30,10 @@ public class PigLatinTranslator {
          ++punctuationIndex;
          punctuation = word.substring(word.length()-1);
       }
-      if(TranslationException.beginsWithVowel(word)) return word.substring(0,word.length()-punctuationIndex) + "yay" + punctuation;
+      if(TranslationException.beginsWithVowel(word) || TranslationException.checkHVowel(word)) {
+         if(word.endsWith("y")) return word.substring(0,word.length()-punctuationIndex) + "way" + punctuation;
+         return word.substring(0,word.length()-punctuationIndex) + "yay" + punctuation;
+      }
       else {
          int consonantBegin = TranslationException.beginsWithConsonant(word);
          if(consonantBegin > 1) return word.substring(consonantBegin, word.length()-punctuationIndex) + word.substring(0,consonantBegin) + "ay" + punctuation;
