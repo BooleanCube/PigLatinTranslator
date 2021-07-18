@@ -13,7 +13,7 @@ This Pig Latin Translator translates text from English to Pig Latin. This is a p
 - [ ] Exceptions (etc.)
 - [X] Capitalization
 - [X] Vowel but Y end
-- [ ] File Management
+- [X] File Management
 
 ### EXTRA:
 - [ ] Add the project to maven (if that is a possibility)
