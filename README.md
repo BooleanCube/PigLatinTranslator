@@ -10,10 +10,14 @@ This Pig Latin Translator translates text from English to Pig Latin. This is a p
 - [X] H-Vowel Combination Check
 - [ ] Vowel-End T Combination Check
 - [X] Multi-Letter Consonant Check
-- [ ] Exceptions (etc.)
 - [X] Capitalization
 - [X] Vowel but Y end
 - [X] File Management
+- [ ] "QU" Check
+- [ ] Y Vowel/Consonant Check
+- [ ] Contractions Check
+- [ ] Hyphenated words are treated as 2 words
+- [ ] Digit in word Check
 
 ### EXTRA:
 - [ ] Add the project to maven (if that is a possibility)
