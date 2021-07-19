@@ -6,8 +6,11 @@ public class TranslationException {
 
    public static int beginsWithConsonant(String word) {
         int counter = 0;
+        char last = '\u0000';
         while(counter < word.length()) {
-            if(!isVowel(word.charAt(counter))) ++counter;
+            if(last == 'q' && word.charAt(counter) == 'u') {last=word.charAt(counter); ++counter;}
+            else if(!isVowel(last) && word.charAt(counter) == 'y') break;
+            else if(!isVowel(word.charAt(counter))) {last=word.charAt(counter); ++counter;}
             else break;
         }
         return counter;
@@ -15,7 +18,7 @@ public class TranslationException {
 
    public static boolean isVowel(char c) {
        String vowels = "aeiou";
-       return vowels.indexOf(c) > -1;
+       return vowels.indexOf(c)>-1;
    }
 
    public static boolean checkPunctuation(String word) {
