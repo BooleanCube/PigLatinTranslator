@@ -13,7 +13,7 @@ This Pig Latin Translator translates text from English to Pig Latin. This is a p
 - [X] Capitalization
 - [X] Vowel but Y end
 - [X] File Management
-- [ ] "QU" Check
+- [X] "QU" Check
 - [ ] Y Vowel/Consonant Check
 - [ ] Contractions Check
 - [ ] Hyphenated words are treated as 2 words
