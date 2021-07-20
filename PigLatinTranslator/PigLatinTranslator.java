@@ -14,6 +14,13 @@ public class PigLatinTranslator {
       StringTokenizer st = new StringTokenizer(sentence);
       while(st.hasMoreTokens()) {
          String word = st.nextToken();
+         try {
+            boolean next = true;
+            for(char c : word.toCharArray()) {
+               if(!Character.isDigit(c)) {next = false; break;}
+            }
+            if(next) {result += word + " "; continue;}
+         } catch(Exception e){}
          boolean containsUpperCase = TranslationException.containsUpperCase(word);
          word = word.toLowerCase();
          if(word.contains("-")) {
