@@ -16,9 +16,25 @@ public class PigLatinTranslator {
          String word = st.nextToken();
          boolean containsUpperCase = TranslationException.containsUpperCase(word);
          word = word.toLowerCase();
-         word = translateWord(word);
-         if(containsUpperCase) result += Character.toUpperCase(word.charAt(0)) + word.substring(1) + " ";
-         else result += word + " ";
+         if(word.contains("-")) {
+            String[] words = word.split("-");
+            for(int i=0; i<words.length; i++) {
+               words[i] = translateWord(words[i]);
+            }
+            boolean containsUpper = false;
+            for(int i=0; i<words.length-1; i++) {
+               containsUpper = TranslationException.containsUpperCase(words[i]);
+               if(containsUpper) result += Character.toUpperCase(words[i].charAt(0)) + words[i].substring(1) + "-";
+               else result += words[i] + "-";
+            }
+            containsUpper = TranslationException.containsUpperCase(words[words.length-1]);
+            if(containsUpper) result += Character.toUpperCase(words[words.length-1].charAt(0)) + words[words.length-1].substring(1) + "-";
+            else result += words[words.length-1] + " ";
+         } else {
+            word = translateWord(word);
+            if(containsUpperCase) result += Character.toUpperCase(word.charAt(0)) + word.substring(1) + " ";
+            else result += word + " ";
+         }
       }
       return result.trim();
    }
@@ -31,8 +47,9 @@ public class PigLatinTranslator {
          punctuation = word.substring(word.length()-1);
       }
       if(TranslationException.beginsWithVowel(word) || TranslationException.checkHVowel(word)) {
-         if(word.endsWith("y")) return word.substring(0,word.length()-punctuationIndex) + "way" + punctuation;
-         return word.substring(0,word.length()-punctuationIndex) + "yay" + punctuation;
+         String ret = word.substring(0, word.length() - punctuationIndex);
+         if(word.endsWith("y")) return ret + "way" + punctuation;
+         return ret + "yay" + punctuation;
       }
       else {
          int consonantBegin = TranslationException.beginsWithConsonant(word);
