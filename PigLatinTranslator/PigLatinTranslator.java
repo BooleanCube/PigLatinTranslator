@@ -3,12 +3,6 @@ import java.util.*;
 
 public class PigLatinTranslator {
 
-   public static void main(String[] args) throws IOException {
-      BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-      String untranslatedText = bf.readLine();
-      System.out.println(translateText(untranslatedText));
-   }
-
    public static String translateText(String sentence) {
       String result = "";
       StringTokenizer st = new StringTokenizer(sentence);
