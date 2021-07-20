@@ -16,7 +16,7 @@ This Pig Latin Translator translates text from English to Pig Latin. This is a p
 - [X] "QU" Check
 - [X] Y Vowel/Consonant Check
 - [ ] Contractions Check
-- [ ] Hyphenated words are treated as 2 words
+- [X] Hyphenated words are treated as multiple words
 - [ ] Digit in word Check
 
 ### EXTRA:
